@@ -1,70 +1,144 @@
-# Getting Started with Create React App
+# Personal Finance Visualizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+A **Personal Finance Visualizer** web application built using **React**, **MongoDB**, **Recharts**, and **shadcn/ui**. This application helps users track their income and expenses, categorize transactions, set budgets, and visualize their spending through charts. The app provides an intuitive interface for managing personal finances with features like monthly expenses tracking, budget setting, and category-wise visualizations.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Transaction Tracking**: Add, view, update, and delete income/expense transactions.
+- **Transaction Categorization**: Categorize transactions (e.g., Food, Rent, Utilities, etc.).
+- **Data Visualizations**: 
+  - Monthly expenses bar chart
+  - Category-wise pie chart
+  - Budget vs. Actual comparison chart
+- **Budget Management**: Set budgets for various categories and compare actual spending with the set budget.
+- **Responsive UI**: The application is fully responsive and adjusts to different screen sizes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend**:
+  - React
+  - Next.js (Optional for Routing in Production)
+  - Recharts (for Data Visualization)
+  - Tailwind CSS
+  - shadcn/ui (UI components library)
+  - React Hook Form (for form management)
+  - Zod (for form validation)
 
-### `npm run build`
+- **Backend**:
+  - MongoDB (for storing transactions, budgets, etc.)
+  - Mongoose (for MongoDB schema and models)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Development Tools**:
+  - Axios (for making HTTP requests)
+  - Date-fns (for date manipulation)
+  - Prettier (for code formatting)
+  - clsx, class-variance-authority (for managing conditional class names)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `npm run eject`
+### 1. Clone the repository
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone https://github.com/yourusername/personal-finance-visualizer.git
+cd personal-finance-visualizer
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Install dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 3. Set up environment variables
 
-## Learn More
+Create a `.env.local` file in the root of your project and add your MongoDB URI:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+MONGODB_URI=<your_mongodb_connection_string>
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can get a free MongoDB connection string from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
 
-### Code Splitting
+### 4. Run the development server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm run dev
+```
 
-### Analyzing the Bundle Size
+Your application will be available at `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### `/api/transactions`
+- **GET**: Fetch all transactions.
+- **POST**: Create a new transaction.
+- **PUT**: Update an existing transaction.
+- **DELETE**: Delete a transaction.
 
-### Advanced Configuration
+### `/api/budgets`
+- **GET**: Fetch all budgets.
+- **POST**: Create or update a budget.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+1. **Add a Transaction**: Fill out the form to add a new transaction, specifying the amount, date, description, and category.
+2. **View Transactions**: View all transactions in a list format.
+3. **View Charts**: View monthly expenses in a bar chart, and the category breakdown in a pie chart.
+4. **Set a Budget**: Set a budget for different categories.
+5. **View Budget Insights**: Compare the actual spending to the set budget with a chart.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Deployment
+
+1. **Deploy to Vercel**:  
+   If you'd like to deploy this project, you can use [Vercel](https://vercel.com). Just sign in with your GitHub account and follow the deployment steps.
+
+2. **Set up Environment Variables on Vercel**:
+   - Go to the Vercel Dashboard.
+   - Navigate to your project.
+   - Add the `MONGODB_URI` as an environment variable in the project settings.
+
+---
+
+## Contributing
+
+1. Fork this repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes.
+4. Push to your fork.
+5. Create a pull request.
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## Contact
+
+Created by **Abrar Ali**  
+For inquiries, feel free to contact me at [sonuabrar1999@gmail.com].
+
+---
+
+### Notes
+
+- Be sure to replace `Abrar Ali` and `sonuabrar1999@gmail.com` with your actual GitHub username and email address.
+- You can modify or extend the features section based on what you’ve implemented or plan to implement.
+
+Let me know if you need further adjustments! 😄
